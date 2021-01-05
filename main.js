@@ -1,4 +1,3 @@
-
 var GeoJSON      = ol.format.GeoJSON;
 var OSM          = ol.source.OSM;
 var VectorSource = ol.source.Vector;
@@ -14,7 +13,7 @@ var DragBox      = ol.interaction.DragBox;
 var platformModifierKeyOnly = ol.events.condition.platformModifierKeyOnly;
 
 var vectorSource = new VectorSource({
-  url: './data/geojson/sel_mun.geojson',
+  url: 'sel_mun.geojson',
   format: new GeoJSON(),
 });
 
