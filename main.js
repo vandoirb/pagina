@@ -8,7 +8,7 @@ import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
 import {platformModifierKeyOnly} from 'ol/events/condition';
 
 var vectorSource = new VectorSource({
-  url: 'data/geojson/countries.geojson',
+  url: 'data/geojson/sel_mun.geojson',
   format: new GeoJSON(),
 });
 
