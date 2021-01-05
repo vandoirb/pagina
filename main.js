@@ -1,11 +1,17 @@
-import 'ol/ol.css';
-import GeoJSON from 'ol/format/GeoJSON';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import {DragBox, Select} from 'ol/interaction';
-import {OSM, Vector as VectorSource} from 'ol/source';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-import {platformModifierKeyOnly} from 'ol/events/condition';
+
+var GeoJSON      = ol.format.GeoJSON;
+var OSM          = ol.source.OSM;
+var VectorSource = ol.source.Vector;
+var VectorLayer  = ol.layer.Vector;
+var TileLayer    = ol.layer.Tile;
+var Style        = ol.style.Style;
+var Stroke       = ol.style.Stroke;
+var CircleStyle  = ol.style.Circle;
+var Map          = ol.Map;
+var View         = ol.View;
+var Select       = ol.interaction.Select;
+var DragBox      = ol.interaction.DragBox;
+var platformModifierKeyOnly = ol.events.condition.platformModifierKeyOnly;
 
 var vectorSource = new VectorSource({
   url: 'data/geojson/sel_mun.geojson',
