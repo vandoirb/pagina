@@ -91,7 +91,7 @@ var infoBox = document.getElementById('info');
 
 selectedFeatures.on(['add', 'remove'], function () {
   var names = selectedFeatures.getArray().map(function (feature) {
-    return feature.get('name');
+    return feature.get('NM_MUNICIP');
   });
   if (names.length > 0) {
     infoBox.innerHTML = names.join(', ');
