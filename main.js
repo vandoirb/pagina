@@ -90,7 +90,7 @@ var infoBox = document.getElementById('info');
 
 selectedFeatures.on(['add', 'remove'], function () {
   var names = selectedFeatures.getArray().map(function (feature) {
-    return feature.get('NM_MUNICIP');
+    return feature.get('CD_GEOCMU');
   });
   if (names.length > 0) {
     infoBox.innerHTML = names.join(', ');
