@@ -1,5 +1,6 @@
 var GeoJSON      = ol.format.GeoJSON;
 var OSM          = ol.source.OSM;
+var Geolocation  = ol.Geolocation;
 var VectorSource = ol.source.Vector;
 var VectorLayer  = ol.layer.Vector;
 var TileLayer    = ol.layer.Tile;
@@ -17,6 +18,14 @@ var vectorSource = new VectorSource({
   format: new GeoJSON(),
 });
 
+view = new View({
+    center: [-4000000, -2300000],
+    zoom: 2,
+    constrainRotation: 16,
+  });
+
+var geolocation = new Geolocation({projection: view.getProjection()});
+
 var map = new Map({
   layers: [
     new TileLayer({
@@ -26,12 +35,11 @@ var map = new Map({
       source: vectorSource,
     }) ],
   target: 'map',
-  view: new View({
-    center: [0, 0],
-    zoom: 2,
-    constrainRotation: 16,
-  }),
+  view: view,
 });
+
+// listen to changes in position
+window.console.log(geolocation.getPosition())
 
 // a normal select interaction to handle click
 var select = new Select();
