@@ -13,7 +13,7 @@ var DragBox      = ol.interaction.DragBox;
 var platformModifierKeyOnly = ol.events.condition.platformModifierKeyOnly;
 
 var vectorSource = new VectorSource({
-  url: 'sel_mun.geojson',
+  url: 'data/geojson/sel_mun.geojson',
   format: new GeoJSON(),
 });
 
