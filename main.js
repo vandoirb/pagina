@@ -36,10 +36,21 @@ var map = new Map({
   view: view,
 });
 
-var geolocation = new Geolocation({projection: view.getProjection()});
+var geolocation = new ol.Geolocation({
+    projection: map.getView().getProjection(),
+    tracking: true,
+    trackingOptions: {
+      enableHighAccuracy: true,
+      maximumAge: 2000  
+    }
+  });
 
 // listen to changes in position
-window.console.log(geolocation.getPosition())
+geolocation.on('change', function() {
+    var pos = geolocation.getPosition();
+    view.setCenter(pos);
+    view.setZoom(10); 
+  });
 
 // a normal select interaction to handle click
 var select = new Select();
