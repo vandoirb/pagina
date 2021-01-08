@@ -36,7 +36,7 @@ var map = new Map({
   view: view,
 });
 
-var geolocation = new ol.Geolocation({
+var geolocation = new Geolocation({
     projection: map.getView().getProjection(),
     tracking: true,
     trackingOptions: {
