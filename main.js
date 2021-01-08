@@ -24,8 +24,6 @@ view = new View({
     constrainRotation: 16,
   });
 
-var geolocation = new Geolocation({projection: view.getProjection()});
-
 var map = new Map({
   layers: [
     new TileLayer({
@@ -37,6 +35,8 @@ var map = new Map({
   target: 'map',
   view: view,
 });
+
+var geolocation = new Geolocation({projection: view.getProjection()});
 
 // listen to changes in position
 window.console.log(geolocation.getPosition())
