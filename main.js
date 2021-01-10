@@ -49,7 +49,7 @@ var geolocation = new Geolocation({
 geolocation.on('change', function() {
     var pos = geolocation.getPosition();
     view.setCenter(pos);
-    view.setZoom(10); 
+    view.setZoom(5); 
   });
 
 // a normal select interaction to handle click
